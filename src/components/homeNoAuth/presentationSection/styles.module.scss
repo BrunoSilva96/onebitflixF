@@ -1,20 +1,41 @@
 @import '../../../../styles/colors.module.scss';
 
-.imgPresentation{
+.imgPresentation {
    width: 550px;
 }
-.subTitle{
+.subTitle {
    font-size: 18px;
    font-weight: bold;
    color: $lightRed;
 }
-.title{
+.title {
    font-size: 40px;
    font-weight: bold;
    line-height: 50px;
 }
-.description{
+.description {
    font-size: 20px;
    color: lightgray;
    margin: 20px 0px 40px 0px;
+}
+.btnCta {
+   font-weight: bold;
+   color: white;
+   display: flex;
+   align-items: center;
+   gap: 25px;
+   padding: 14px 30px;
+   border: 2px solid $lightRed;
+
+   .btnImg {
+      width: 11px;
+   }
+   &:hover{
+      border-color: $darkRed;
+      color: $lightGray;
+      background-color: transparent;
+   }
+}
+.arrowDown{
+   width: 30px;
 }
