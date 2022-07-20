@@ -13,12 +13,12 @@ export type CourseType = {
    id: number;
    name: string;
    thumbnailUrl: string;
-   sinopsys: string;
+   synopsis: string;
    episodes?: EpisodeType[];
 }; 
 
 const courseService = {
-   getNewestCourse: async () => {
+   getNewestCourses: async () => {
       const res = await api.get("/courses/newest").catch((error) => {
          console.log(error.response.data.message);
 
