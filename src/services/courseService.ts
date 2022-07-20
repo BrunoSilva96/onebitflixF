@@ -12,7 +12,7 @@ export type EpisodeType = {
 export type CourseType = {
    id: number;
    name: string;
-   thumbnailRel: string;
+   thumbnailUrl: string;
    sinopsys: string;
    episodes?: EpisodeType[];
 }; 
