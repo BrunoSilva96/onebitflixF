@@ -22,7 +22,7 @@ const HeaderNoAuth = function() {
                   <Button className={styles.navBtn} outline >
                      Quero fazer parte
                   </Button>
-               </Link>
+               </Link> 
             </div>
          </Container>
       </>
