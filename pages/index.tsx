@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head'
 import { ReactNode } from 'react';
+import Footer from '../src/components/common/footer';
 import CardsSecton from '../src/components/homeNoAuth/cardSection';
 import HeaderNoAuth from '../src/components/homeNoAuth/headerNoAuth';
 import PresentationSection from '../src/components/homeNoAuth/presentationSection';
@@ -29,6 +30,7 @@ const HomeNoAuth = ({ course }: IndexPageProps) => {
             </div>
             <CardsSecton/>
             <SlideSection newestCourses={course}/>
+            <Footer/>
          </main>
       </>
    );
