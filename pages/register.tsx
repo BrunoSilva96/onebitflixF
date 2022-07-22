@@ -3,8 +3,42 @@ import Head from 'next/head';
 import HeaderGeneric from '../src/components/common/headerGeneric';
 import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import Footer from '../src/components/common/footer';
+import { FormEvent } from 'react';
+import authService from '../src/services/authService';
 
 const Register = function() {
+
+   const handleRegister = async(event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+
+      const formData = new FormData(event.currentTarget);
+      const firstName = formData.get("firstName")!.toString();
+      const lastName = formData.get("lastName")!.toString();
+      const phone = formData.get("phone")!.toString();
+      const birth = formData.get("birth")!.toString();
+      const email = formData.get("email")!.toString();
+      const password = formData.get("password")!.toString();
+      const confirmPassword = formData.get("confirmPassword")!.toString();
+      const params = { firstName, lastName, phone, birth, email, password };
+
+      if(password != confirmPassword) {
+         alert("A senha e a confirmação são diferentes!")
+
+         return;
+      }
+
+      const { data, status } = await authService.register(params);
+
+      if(status === 201) {
+         alert("Cadastro realizado com sucesso!")
+
+         return;
+      } else {
+         alert(data.message);
+      }
+      
+   };
+
    return (
       <>
          <Head>
@@ -16,7 +50,7 @@ const Register = function() {
             <HeaderGeneric logoUrl="/" btnUrl="/login" btnContent="Quero fazer login" />
             <Container className="py-5">
                <p className={styles.formTitle}>Bem-vindo(a) ao OneBitFlix!</p>
-               <Form className={styles.form}>
+               <Form className={styles.form} onSubmit={handleRegister}>
                   <p className="text-center">
                      <strong>Faça a sua conta!</strong>
                   </p>
@@ -96,7 +130,7 @@ const Register = function() {
                   <Label for="password" className={styles.label}>CONFIRME SUA SENHA</Label>
                      <Input 
                         id="password" 
-                        name="password" 
+                        name="confirmPassword" 
                         type="password" 
                         placeholder="Confirme a sua senha" 
                         required
