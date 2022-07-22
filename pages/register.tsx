@@ -64,7 +64,7 @@ const Register = function() {
                         type="email" 
                         placeholder="Digite o seu e-mail" 
                         required
-                        className={styles.inputName}
+                        className={styles.input}
                      />
                   </FormGroup>
                   <FormGroup>
@@ -76,7 +76,7 @@ const Register = function() {
                         min="1930-01-01"
                         max="2022-12-31"
                         required
-                        className={styles.inputName}
+                        className={styles.input}
                      />
                   </FormGroup>
                   <FormGroup>
@@ -89,7 +89,7 @@ const Register = function() {
                         required
                         minLength={6}
                         maxLength={20}
-                        className={styles.inputName}
+                        className={styles.input}
                      />
                   </FormGroup>
                   <FormGroup>
@@ -102,9 +102,12 @@ const Register = function() {
                         required
                         minLength={6}
                         maxLength={20}
-                        className={styles.inputName}
+                        className={styles.input}
                      />
                   </FormGroup>
+                  <Button type="submit" outline className={styles.formBtn}>
+                     CADASTRAR
+                  </Button>
                </Form>
             </Container>
             <Footer/>
