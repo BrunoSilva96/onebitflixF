@@ -13,7 +13,7 @@ const ToastComponent = function ({ isOpen, message, color }: props) {
             <ToastBody className="text-center">{message}</ToastBody>
          </Toast>
       </>
-   )
-}
+   );
+};
 
 export default ToastComponent;
