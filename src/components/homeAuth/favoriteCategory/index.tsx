@@ -7,12 +7,15 @@ const FavoriteCategory = function() {
    const { data, error } = useSWR("/favorites", courseService.getFavCourses)
    
    if(error) return error;
-   if(!data) return (<><p>Loading...</p></>)
-
+   if(!data) return (
+      <>
+         <p>Loading...</p>
+      </>
+   );
 
    return (
       <>
-         <p className={styles.titleCategory}>Minha Lista</p>
+         <p className={styles.titleCategory}>MINHA LISTA</p>
          {data.data.courses.length > 1 ? (
             <SlideComponent course={data.data.couses}/>
          ) : (
